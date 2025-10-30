@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suddarsi Sagar - AI Operations Expert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+<style>
+        :root {
+            --background: #0a0a0a;
+            --foreground: #f8f8f8;
+            --muted-foreground: #a3a3a3;
+            --primary: #3b82f6; /* Blue */
+            --secondary: #8b5cf6; /* Violet */
+            --accent: #14b8a6; /* Teal */
+            --border: #27272a;
+            --card: #18181b;
+        }
+        body {
+            background-color: var(--background);
+            color: var(--foreground);
+            scroll-behavior: smooth;
+        }
+        .creative-text-gradient {
+            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .glass-navigation {
+            background-color: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .glass-card {
+            background-color: rgba(24, 24, 27, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .gradient-border {
+            border: 1px solid transparent;
+            background: linear-gradient(var(--card), var(--card)) padding-box, linear-gradient(to right, var(--primary), var(--secondary)) border-box;
+            border-radius: 1.5rem; 
+        }
+        .hover-float {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .hover-float:hover {
+            transform: translateY(-8px);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -100% 0; }
+            100% { background-position: 100% 0; }
+        }
+        .shimmer {
+            animation: shimmer 15s linear infinite;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background-size: 200% 100%;
+        }
+        .float { animation: float 6s ease-in-out infinite; }
+        .float-delay-1 { animation: float 7s ease-in-out infinite 1s; }
+        .float-delay-2 { animation: float 8s ease-in-out infinite 2s; }
+    </style>
+</head>
+<body class="antialiased scroll-smooth">
+    <div id="icon-defs" class="hidden">
+        <svg id="icon-mail" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <svg id="icon-phone" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <svg id="icon-linkedin" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+        <svg id="icon-instagram" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        <svg id="icon-database" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 12 22A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 12 15A9 3 0 0 0 21 12"/></svg>
+        <svg id="icon-code" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>
+        <svg id="icon-settings" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+        <svg id="icon-brain" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.98-1.58 2.5 2.5 0 0 1-2.22-3.13A2.5 2.5 0 0 1 4.5 12V4.5A2.5 2.5 0 0 1 7 2h2.5z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.98-1.58 2.5 2.5 0 0 0 2.22-3.13A2.5 2.5 0 0 0 19.5 12V4.5A2.5 2.5 0 0 0 17 2h-2.5z"/></svg>
+        <svg id="icon-cpu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M9 2v2"/><path d="M9 20v2"/><path d="M2 9h2"/><path d="M2 15h2"/><path d="M20 9h2"/><path d="M20 15h2"/></svg>
+        <svg id="icon-zap" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        <svg id="icon-x" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        <svg id="icon-arrow-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </div>
+
+    <nav id="navbar" class="fixed top-0 w-full glass-navigation z-50 border-b border-[var(--border)]">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#home" class="flex items-center space-x-4">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] rounded-lg blur-sm opacity-60"></div>
+                        <img src="https://i.postimg.cc/htxbsfcx/pArts.jpg" alt="Logo" class="relative w-12 h-10 object-contain rounded-lg border border-[var(--border)]/30"/>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-bold creative-text-gradient">Suddarsi Sagar</span>
+                        <div class="text-xs text-[var(--muted-foreground)] tracking-wider">AI OPERATIONS EXPERT</div>
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="nav-link relative px-3 py-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-all duration-300 group">Home</a>
+                    <a href="#about" class="nav-link relative px-3 py-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-all duration-300 group">About</a>
+                    <a href="#skills" class="nav-link relative px-3 py-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-all duration-300 group">Skills</a>
+                    <a href="#services" class="nav-link relative px-3 py-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-all duration-300 group">Services</a>
+                    <a href="#projects" class="nav-link relative px-3 py-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-all duration-300 group">Projects</a>
+                    <a href="#resume" class="nav-link relative px-3 py-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-all duration-300 group">Resume</a>
+                    <a href="#contact" class="nav-link-btn relative bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] hover:from-[var(--primary)]/90 hover:to-[var(--secondary)]/90 shadow-lg hover:shadow-xl transition-all duration-300 px-4 py-2 rounded-md text-white">Contact</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="lg:hidden p-2">
+                    <svg class="w-6 h-6"><use href="#icon-menu"></use></svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden lg:hidden py-4 border-t border-[var(--border)]">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="nav-link text-left py-2 text-[var(--muted-foreground)] hover:text-[var(--primary)] transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-left py-2 text-[var(--muted-foreground)] hover:text-[var(--primary)] transition-colors">About</a>
+                    <a href="#skills" class="nav-link text-left py-2 text-[var(--muted-foreground)] hover:text-[var(--primary)] transition-colors">Skills</a>
+                    <a href="#services" class="nav-link text-left py-2 text-[var(--muted-foreground)] hover:text-[var(--primary)] transition-colors">Services</a>
+                    <a href="#projects" class="nav-link text-left py-2 text-[var(--muted-foreground)] hover:text-[var(--primary)] transition-colors">Projects</a>
+                    <a href="#resume" class="nav-link text-left py-2 text-[var(--muted-foreground)] hover:text-[var(--primary)] transition-colors">Resume</a>
+                    <a href="#contact" class="nav-link-btn w-fit mt-2 bg-[var(--primary)] text-white px-4 py-2 rounded-md">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <section id="home" class="pt-20 min-h-screen flex items-center relative overflow-hidden">
+            <div class="absolute inset-0 w-full h-full">
+                
+<div id="parallax-bg" class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://i.postimg.cc/PxSXYwFn/Screenshot-2025-10-23-122025.png'); transform: scale(1.1); filter: brightness(1.2) contrast(1.5);"></div>
+                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 shimmer" style="background-image: url('https://images.unsplash.com/photo-1694366937662-829f7924185e?q=80&w=1932&auto=format&fit=crop'); mix-blend-mode: overlay;"></div>
+            </div>
+            
+<div class="absolute inset-0 bg-gradient-to-br from-[var(--background)]/98 via-[var(--background)]/95 to-[var(--background)]/92"></div>
+            <div class="absolute top-1/4 left-1/6 w-80 h-80 bg-gradient-to-br from-[var(--primary)]/20 to-[var(--secondary)]/10 rounded-full blur-3xl float"></div>
+            <div class="absolute bottom-1/3 right-1/6 w-96 h-96 bg-gradient-to-tr from-[var(--secondary)]/15 to-[var(--accent)]/10 rounded-full blur-3xl float-delay-1"></div>
+
+            <div class="container mx-auto px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-10">
+                        <div class="space-y-6">
+                            <div class="inline-flex items-center px-6 py-3 glass-card rounded-full text-white text-sm font-semibold tracking-wide border border-[var(--primary)]/20 hover:border-[var(--primary)]/40 transition-all duration-300 hover-float">
+                                <svg class="w-5 h-5 mr-3 animate-pulse"><use href="#icon-brain"></use></svg>
+                                AI OPERATIONS MANAGER
+                                <div class="w-2 h-2 bg-[var(--primary)] rounded-full ml-3 animate-ping"></div>
+                            </div>
+                            
+                            <div class="space-y-2">
+                                <h1 class="text-5xl lg:text-7xl font-bold leading-tight tracking-tight text-white">
+                                    <span class="block">Suddarsi Sangeeth</span>
+                                    
+<span class="creative-text-gradient block">Sagar</span>
+                                </h1>
+                                <div class="h-1 w-32 bg-gradient-to-r from-[var(--primary)] via-[var(--secondary)] to-[var(--accent)] rounded-full"></div>
+                            </div>
+                            
+                            
+<p class="text-xl lg:text-2xl text-white leading-relaxed max-w-2xl font-light">
+                                Transforming operations through 
+                                <span class="text-[var(--primary)] font-medium"> AI innovation</span> and 
+                                <span class="text-[var(--secondary)] font-medium"> intelligent automation</span> 
+                                at Agmay Technologies
+                            </p>
+                            
+                            <div class="flex items-center space-x-8 pt-4 text-white">
+                                <div class="text-center"><div class="text-2xl font-bold text-[var(--primary)]">5+</div><div class="text-sm text-white/80">AI Projects</div></div>
+                                <div class="text-center"><div class="text-2xl font-bold text-[var(--secondary)]">92%</div><div class="text-sm text-white/80">Accuracy Rate</div></div>
+                                <div class="text-center"><div class="text-2xl font-bold text-[var(--accent)]">2024</div><div class="text-sm text-white/80">Graduate</div></div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-6">
+                             <a href="#projects" class="nav-link-btn relative bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] hover:from-[var(--primary)]/90 hover:to-[var(--secondary)]/90 shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-4 text-lg group rounded-md text-white inline-block text-center">
+                                <span class="relative z-10 flex items-center justify-center">
+                                    View Projects
+                                    <svg class="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform"><use href="#icon-arrow-right"></use></svg>
+                                </span>
+                            </a>
+                            <a href="#contact" class="nav-link-btn glass-card border border-[var(--primary)]/30 hover:border-[var(--primary)]/60 text-white hover:text-[var(--primary)] px-8 py-4 text-lg transition-all duration-300 hover-float rounded-md text-center">
+                                Get In Touch
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="relative w-full max-w-md mx-auto">
+                            <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] via-[var(--secondary)] to-[var(--accent)] rounded-3xl blur-3xl opacity-30 animate-pulse"></div>
+                            <div class="relative bg-gradient-to-br from-[var(--border)]/20 to-[var(--border)]/5 p-1 rounded-3xl">
+                                <img src="https://i.postimg.cc/x10wD18Y/20-AG1-A6656-3.jpg" alt="Suddarsi Sangeeth Sagar" class="w-full h-auto rounded-3xl shadow-2xl hover-float" style="filter: contrast(1.1) brightness(1.05)"/>
+                            </div>
+                            <div class="absolute -top-6 -right-6 w-20 h-20 glass-card rounded-2xl flex items-center justify-center backdrop-blur-lg border border-[var(--primary)]/30 float">
+                                <svg class="w-10 h-10 text-[var(--primary)] animate-pulse"><use href="#icon-cpu"></use></svg>
+                            </div>
+                            <div class="absolute -bottom-6 -left-6 w-20 h-20 glass-card rounded-2xl flex items-center justify-center backdrop-blur-lg border border-[var(--secondary)]/30 float-delay-1">
+                                <svg class="w-10 h-10 text-[var(--secondary)] animate-pulse"><use href="#icon-zap"></use></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 relative overflow-hidden bg-[var(--background)]">
+            <div class="container mx-auto px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-20">
+                    <div class="inline-block mb-6">
+                        <span class="text-sm font-semibold tracking-wider text-[var(--primary)] uppercase">Discover My Journey</span>
+                        <div class="h-0.5 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] mt-2"></div>
+                    </div>
+                    <h2 class="text-4xl lg:text-6xl font-bold mb-6">About <span class="creative-text-gradient">Me</span></h2>
+                    <p class="text-xl lg:text-2xl text-[var(--muted-foreground)] max-w-3xl mx-auto leading-relaxed">
+                        Passionate about leveraging <span class="text-[var(--primary)] font-medium">cutting-edge AI</span> to revolutionize processes and enable 
+                        <span class="text-[var(--secondary)] font-medium"> intelligent decision-making</span> across industries.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-8">
+                        <div class="relative group">
+                            <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)]/20 to-[var(--secondary)]/20 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
+                            <div class="relative gradient-border">
+                                <img src="https://i.postimg.cc/wB5ZtLH6/Whats-App-Image-2025-07-12-at-18-50-09-ade36261.jpg" alt="About Suddarsi" class="w-full rounded-2xl shadow-2xl hover-float"/>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-8">
+                         <div class="glass-card p-8 rounded-2xl border border-[var(--primary)]/20 hover:border-[var(--primary)]/40 transition-all duration-300 hover-float group">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-6 h-6 text-white"><use href="#icon-settings"></use></svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-3 text-[var(--primary)] group-hover:text-[var(--foreground)] transition-colors">Current Role</h3>
+                                    <p class="text-[var(--muted-foreground)] leading-relaxed">
+                                        Operations Manager at <span class="text-[var(--primary)] font-medium">Agmay Technologies Pvt. Ltd.</span>, specializing in 
+                                        AI-driven operations consulting and intelligent data solutions that transform business processes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl border border-[var(--secondary)]/20 hover:border-[var(--secondary)]/40 transition-all duration-300 hover-float group">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-[var(--secondary)] to-[var(--accent)] rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-6 h-6 text-white"><use href="#icon-brain"></use></svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-3 text-[var(--secondary)] group-hover:text-[var(--foreground)] transition-colors">Education</h3>
+                                    <p class="text-[var(--muted-foreground)] leading-relaxed">
+                                        <span class="text-[var(--secondary)] font-medium">B.Tech in AI & ML</span> from ACE Engineering College (2020–2024), 
+                                        with specialized expertise in neural networks, deep learning, and advanced machine learning algorithms.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="space-y-4">
+                            <h4 class="text-lg font-semibold text-[var(--foreground)]">Specializations</h4>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-[var(--primary)]/10 text-[var(--primary)] rounded-full text-sm font-medium border border-[var(--primary)]/20">AI Leadership</span>
+                                <span class="px-4 py-2 bg-[var(--secondary)]/10 text-[var(--secondary)] rounded-full text-sm font-medium border border-[var(--secondary)]/20">Neural Networks</span>
+                                <span class="px-4 py-2 bg-[var(--accent)]/10 text-[var(--accent)] rounded-full text-sm font-medium border border-[var(--accent)]/20">ML Engineering</span>
+                                <span class="px-4 py-2 bg-[var(--primary)]/10 text-[var(--primary)] rounded-full text-sm font-medium border border-[var(--primary)]/20">AI Strategy</span>
+                                <span class="px-4 py-2 bg-[var(--secondary)]/10 text-[var(--secondary)] rounded-full text-sm font-medium border border-[var(--secondary)]/20">Data Science</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-24 bg-[var(--card)]/30">
+            <div class="container mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-4">Skills & <span class="creative-text-gradient">Expertise</span></h2>
+                    <p class="text-xl text-[var(--muted-foreground)] max-w-2xl mx-auto">A snapshot of my technical capabilities in the AI and data landscape.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass-card p-8 rounded-2xl border border-[var(--border)] hover:border-[var(--primary)]/60 transition-all duration-300 hover-float">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-[var(--primary)]/10 rounded-lg flex items-center justify-center"><svg class="w-6 h-6 text-[var(--primary)]"><use href="#icon-database"></use></svg></div>
+                            <h3 class="text-2xl font-bold">Data & Analytics</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div><div class="flex justify-between mb-1"><span class="text-base font-medium">SQL</span><span class="text-sm font-medium text-[var(--primary)]">90%</span></div><div class="w-full bg-gray-700 rounded-full h-2.5"><div class="bg-[var(--primary)] h-2.5 rounded-full" style="width: 90%"></div></div></div>
+                            <div><div class="flex justify-between mb-1"><span class="text-base font-medium">Data Warehousing</span><span class="text-sm font-medium text-[var(--primary)]">85%</span></div><div class="w-full bg-gray-700 rounded-full h-2.5"><div class="bg-[var(--primary)] h-2.5 rounded-full" style="width: 85%"></div></div></div>
+                            <div><div class="flex justify-between mb-1"><span class="text-base font-medium">MySQL</span><span class="text-sm font-medium text-[var(--primary)]">88%</span></div><div class="w-full bg-gray-700 rounded-full h-2.5"><div class="bg-[var(--primary)] h-2.5 rounded-full" style="width: 88%"></div></div></div>
+                        </div>
+                    </div>
+                    <div class="glass-card p-8 rounded-2xl border border-[var(--border)] hover:border-[var(--secondary)]/60 transition-all duration-300 hover-float">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-[var(--secondary)]/10 rounded-lg flex items-center justify-center"><svg class="w-6 h-6 text-[var(--secondary)]"><use href="#icon-code"></use></svg></div>
+                            <h3 class="text-2xl font-bold">Programming</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div><div class="flex justify-between mb-1"><span class="text-base font-medium">Python</span><span class="text-sm font-medium text-[var(--secondary)]">92%</span></div><div class="w-full bg-gray-700 rounded-full h-2.5"><div class="bg-[var(--secondary)] h-2.5 rounded-full" style="width: 92%"></div></div></div>
+                            <div><div class="flex justify-between mb-1"><span class="text-base font-medium">Machine Learning</span><span class="text-sm font-medium text-[var(--secondary)]">87%</span></div><div class="w-full bg-gray-700 rounded-full h-2.5"><div class="bg-[var(--secondary)] h-2.5 rounded-full" style="width: 87%"></div></div></div>
+                            <div><div class="flex justify-between mb-1"><span class="text-base font-medium">C Programming</span><span class="text-sm font-medium text-[var(--secondary)]">80%</span></div><div class="w-full bg-gray-700 rounded-full h-2.5"><div class="bg-[var(--secondary)] h-2.5 rounded-full" style="width: 80%"></div></div></div>
+                        </div>
+                    </div>
+                    <div class="glass-card p-8 rounded-2xl border border-[var(--border)] hover:border-[var(--accent)]/60 transition-all duration-300 hover-float">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-[var(--accent)]/10 rounded-lg flex items-center justify-center"><svg class="w-6 h-6 text-[var(--accent)]"><use href="#icon-settings"></use></svg></div>
+                            <h3 class="text-2xl font-bold">Operations</h3>
+                        </div>
+                         <div class="space-y-4">
+                            <div><div class="flex justify-between mb-1"><span class="text-base font-medium">AWS</span><span class="text-sm font-medium text-[var(--accent)]">85%</span></div><div class="w-full bg-gray-700 rounded-full h-2.5"><div class="bg-[var(--accent)] h-2.5 rounded-full" style="width: 85%"></div></div></div>
+                            <div><div class="flex justify-between mb-1"><span class="text-base font-medium">Microsoft Excel</span><span class="text-sm font-medium text-[var(--accent)]">90%</span></div><div class="w-full bg-gray-700 rounded-full h-2.5"><div class="bg-[var(--accent)] h-2.5 rounded-full" style="width: 90%"></div></div></div>
+                            <div><div class="flex justify-between mb-1"><span class="text-base font-medium">Statistical Analysis</span><span class="text-sm font-medium text-[var(--accent)]">82%</span></div><div class="w-full bg-gray-700 rounded-full h-2.5"><div class="bg-[var(--accent)] h-2.5 rounded-full" style="width: 82%"></div></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="services" class="py-24">
+             <div class="container mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-4">Core <span class="creative-text-gradient">Services</span></h2>
+                    <p class="text-xl text-[var(--muted-foreground)] max-w-2xl mx-auto">Offering a range of services to drive business value through AI.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="glass-card p-8 rounded-2xl text-center flex flex-col items-center border border-[var(--border)] hover:border-[var(--primary)]/60 transition-all duration-300 hover-float">
+                        <div class="w-16 h-16 bg-gradient-to-br from-[var(--primary)]/20 to-transparent rounded-full flex items-center justify-center mb-4"><svg class="w-8 h-8 text-[var(--primary)]"><use href="#icon-brain"></use></svg></div>
+                        <h3 class="text-xl font-bold mb-2">AI Strategy Consulting</h3>
+                        <p class="text-[var(--muted-foreground)] text-sm flex-grow">Developing roadmaps for AI integration to achieve business goals.</p>
+                    </div>
+                     <div class="glass-card p-8 rounded-2xl text-center flex flex-col items-center border border-[var(--border)] hover:border-[var(--secondary)]/60 transition-all duration-300 hover-float">
+                        <div class="w-16 h-16 bg-gradient-to-br from-[var(--secondary)]/20 to-transparent rounded-full flex items-center justify-center mb-4"><svg class="w-8 h-8 text-[var(--secondary)]"><use href="#icon-database"></use></svg></div>
+                        <h3 class="text-xl font-bold mb-2">Intelligent Data Solutions</h3>
+                        <p class="text-[var(--muted-foreground)] text-sm flex-grow">Architecting data warehouses and pipelines for ML applications.</p>
+                    </div>
+                     <div class="glass-card p-8 rounded-2xl text-center flex flex-col items-center border border-[var(--border)] hover:border-[var(--accent)]/60 transition-all duration-300 hover-float">
+                        <div class="w-16 h-16 bg-gradient-to-br from-[var(--accent)]/20 to-transparent rounded-full flex items-center justify-center mb-4"><svg class="w-8 h-8 text-[var(--accent)]"><use href="#icon-settings"></use></svg></div>
+                        <h3 class="text-xl font-bold mb-2">Operations Automation</h3>
+                        <p class="text-[var(--muted-foreground)] text-sm flex-grow">Implementing AI models to automate and optimize operational workflows.</p>
+                    </div>
+                     <div class="glass-card p-8 rounded-2xl text-center flex flex-col items-center border border-[var(--border)] hover:border-[var(--primary)]/60 transition-all duration-300 hover-float">
+                        <div class="w-16 h-16 bg-gradient-to-br from-[var(--primary)]/20 to-transparent rounded-full flex items-center justify-center mb-4"><svg class="w-8 h-8 text-[var(--primary)]"><use href="#icon-code"></use></svg></div>
+                        <h3 class="text-xl font-bold mb-2">ML Model Development</h3>
+                        <p class="text-[var(--muted-foreground)] text-sm flex-grow">Custom machine learning model creation, training, and deployment.</p>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <section id="projects" class="py-24 bg-[var(--card)]/30">
+            <div class="container mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-4">Featured <span class="creative-text-gradient">Projects</span></h2>
+                    <p class="text-xl text-[var(--muted-foreground)] max-w-2xl mx-auto">A selection of projects that showcase my skills in action.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass-card rounded-2xl overflow-hidden border border-[var(--border)] hover:shadow-2xl hover:shadow-[var(--primary)]/10 transition-all duration-300 hover-float group">
+                        <img src="https://placehold.co/600x400/3b82f6/FFFFFF?text=Project+1" alt="Project 1" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">AI-Powered Call Center Analytics</h3>
+                            <p class="text-[var(--muted-foreground)] text-sm mb-4">Analyzed call transcripts to identify customer sentiment and key issues, improving agent training and response times.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium bg-[var(--primary)]/10 text-[var(--primary)] px-2 py-1 rounded">Python</span>
+                                <span class="text-xs font-medium bg-[var(--primary)]/10 text-[var(--primary)] px-2 py-1 rounded">NLP</span>
+                                <span class="text-xs font-medium bg-[var(--primary)]/10 text-[var(--primary)] px-2 py-1 rounded">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-2xl overflow-hidden border border-[var(--border)] hover:shadow-2xl hover:shadow-[var(--secondary)]/10 transition-all duration-300 hover-float group">
+                        <img src="https://placehold.co/600x400/8b5cf6/FFFFFF?text=Project+2" alt="Project 2" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Intelligent Document Processing</h3>
+                            <p class="text-[var(--muted-foreground)] text-sm mb-4">Developed a system to automatically extract and categorize data from unstructured PDF documents with 95% accuracy.</p>
+                             <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium bg-[var(--secondary)]/10 text-[var(--secondary)] px-2 py-1 rounded">OCR</span>
+                                <span class="text-xs font-medium bg-[var(--secondary)]/10 text-[var(--secondary)] px-2 py-1 rounded">Deep Learning</span>
+                                <span class="text-xs font-medium bg-[var(--secondary)]/10 text-[var(--secondary)] px-2 py-1 rounded">SQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-2xl overflow-hidden border border-[var(--border)] hover:shadow-2xl hover:shadow-[var(--accent)]/10 transition-all duration-300 hover-float group">
+                        <img src="https://placehold.co/600x400/14b8a6/FFFFFF?text=Project+3" alt="Project 3" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Predictive Maintenance Model</h3>
+                            <p class="text-[var(--muted-foreground)] text-sm mb-4">Built a machine learning model to predict equipment failures, reducing downtime and maintenance costs for a client.</p>
+                             <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-medium bg-[var(--accent)]/10 text-[var(--accent)] px-2 py-1 rounded">ML</span>
+                                <span class="text-xs font-medium bg-[var(--accent)]/10 text-[var(--accent)] px-2 py-1 rounded">Data Analysis</span>
+                                <span class="text-xs font-medium bg-[var(--accent)]/10 text-[var(--accent)] px-2 py-1 rounded">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resume" class="py-24">
+            <div class="container mx-auto px-6 lg:px-8 text-center">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4">My <span class="creative-text-gradient">Resume</span></h2>
+                <p class="text-xl text-[var(--muted-foreground)] max-w-2xl mx-auto mb-8">
+                    An overview of my professional journey. For a detailed look, please download the full version.
+                </p>
+                <div class="max-w-4xl mx-auto text-left bg-[var(--card)]/50 border border-[var(--border)] rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-[var(--primary)] mb-4 border-b border-[var(--border)] pb-2">Suddarsi Sangeeth Sagar</h3>
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold mb-2 text-[var(--secondary)]">Professional Experience</h4>
+                        <p><strong>Operations Manager</strong> - Agmay Technologies Pvt. Ltd.</p>
+                        <p class="text-sm text-[var(--muted-foreground)]">Leading AI-driven operational transformations and managing data solution projects.</p>
+                    </div>
+                     <div class="mb-6">
+                        <h4 class="text-xl font-semibold mb-2 text-[var(--secondary)]">Education</h4>
+                        <p><strong>B.Tech, Artificial Intelligence & Machine Learning</strong> - ACE Engineering College (2020-2024)</p>
+                        <p class="text-sm text-[var(--muted-foreground)]">Graduated with distinction, focusing on deep learning and neural networks.</p>
+                    </div>
+                </div>
+                 <a href="#" class="mt-8 inline-block relative bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] hover:from-[var(--primary)]/90 hover:to-[var(--secondary)]/90 shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-4 text-lg group rounded-md text-white">
+                    Download Full Resume
+                </a>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 bg-[var(--card)]/30">
+            <div class="container mx-auto px-6 lg:px-8">
+                 <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-4">Get In <span class="creative-text-gradient">Touch</span></h2>
+                    <p class="text-xl text-[var(--muted-foreground)] max-w-2xl mx-auto">Have a project in mind or want to connect? I'd love to hear from you.</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                    <div class="space-y-8">
+                        <div class="flex items-center gap-4 glass-card p-6 rounded-xl border border-[var(--border)]">
+                           <div class="w-12 h-12 bg-[var(--primary)]/10 rounded-lg flex items-center justify-center"><svg class="w-6 h-6 text-[var(--primary)]"><use href="#icon-mail"></use></svg></div>
+                            <div>
+                                <h3 class="font-semibold text-lg">Email</h3>
+                                <a href="mailto:s.sagar140102@gmail.com" class="text-[var(--muted-foreground)] hover:text-[var(--primary)] transition-colors">s.sagar140102@gmail.com</a>
+                            </div>
+                        </div>
+                         <div class="flex items-center gap-4 glass-card p-6 rounded-xl border border-[var(--border)]">
+                           <div class="w-12 h-12 bg-[var(--secondary)]/10 rounded-lg flex items-center justify-center"><svg class="w-6 h-6 text-[var(--secondary)]"><use href="#icon-phone"></use></svg></div>
+                            <div>
+                                <h3 class="font-semibold text-lg">Phone</h3>
+                                <a href="tel:+917981716622" class="text-[var(--muted-foreground)] hover:text-[var(--secondary)] transition-colors">+91 79817 16622</a>
+                            </div>
+                        </div>
+                        <div class="pt-4">
+                             <h3 class="font-semibold text-lg mb-4">Follow Me</h3>
+                             <div class="flex space-x-4">
+                                <a href="https://www.linkedin.com/in/sangeeth-sagar-suddarsi-abb773226" target="_blank" class="w-12 h-12 glass-card rounded-full flex items-center justify-center border border-[var(--border)] hover:border-[var(--primary)] hover:text-[var(--primary)] transition-all duration-300 hover-float">
+                                   <svg class="w-6 h-6"><use href="#icon-linkedin"></use></svg>
+                                </a>
+                                <a href="https://www.instagram.com/suddarsi_sagar_14/" target="_blank" class="w-12 h-12 glass-card rounded-full flex items-center justify-center border border-[var(--border)] hover:border-[var(--secondary)] hover:text-[var(--secondary)] transition-all duration-300 hover-float">
+                                   <svg class="w-6 h-6"><use href="#icon-instagram"></use></svg>
+                                </a>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="glass-card p-8 rounded-2xl border border-[var(--border)]">
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                                <input type="text" name="name" id="name" required class="w-full bg-[var(--background)] border border-[var(--border)] rounded-md px-4 py-2 focus:ring-2 focus:ring-[var(--primary)] focus:border-[var(--primary)] outline-none transition-all">
+                            </div>
+                             <div>
+                                <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                                <input type="email" name="email" id="email" required class="w-full bg-[var(--background)] border border-[var(--border)] rounded-md px-4 py-2 focus:ring-2 focus:ring-[var(--primary)] focus:border-[var(--primary)] outline-none transition-all">
+                            </div>
+                             <div>
+                                <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
+                                <input type="text" name="subject" id="subject" required class="w-full bg-[var(--background)] border border-[var(--border)] rounded-md px-4 py-2 focus:ring-2 focus:ring-[var(--primary)] focus:border-[var(--primary)] outline-none transition-all">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                                <textarea name="message" id="message" rows="4" required class="w-full bg-[var(--background)] border border-[var(--border)] rounded-md px-4 py-2 focus:ring-2 focus:ring-[var(--primary)] focus:border-[var(--primary)] outline-none transition-all"></textarea>
+                            </div>
+                            <button type="submit" class="w-full relative bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] hover:from-[var(--primary)]/90 hover:to-[var(--secondary)]/90 shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-3 text-lg group rounded-md text-white">
+                                Send Message
+                            </button>
+                             <div id="form-feedback" class="text-center mt-4"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[var(--background)] border-t border-[var(--border)]">
+        <div class="container mx-auto px-6 lg:px-8 py-8 text-center text-[var(--muted-foreground)]">
+            <p>&copy; 2024 Suddarsi Sangeeth Sagar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contactForm = document.getElementById('contact-form');
+            const formFeedback = document.getElementById('form-feedback');
+
+            // Toggle mobile menu
+            mobileMenuBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                mobileMenu.classList.toggle('hidden');
+                mobileMenuBtn.innerHTML = isHidden ? '<svg class="w-6 h-6"><use href="#icon-x"></use></svg>' : '<svg class="w-6 h-6"><use href="#icon-menu"></use></svg>';
+            });
+
+            // Smooth scroll and close mobile menu
+            const scrollToSection = (e) => {
+                const targetId = e.currentTarget.getAttribute('href');
+
+                // If it's not a link with more than just a '#', don't try to scroll.
+                if (!targetId || targetId.length <= 1) { // Checks for empty href or just '#'
+                    if (targetId === '#') e.preventDefault(); // Prevent jump for placeholder links
+                    
+                    // Still close mobile menu if it's open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                         mobileMenu.classList.add('hidden');
+                         mobileMenuBtn.innerHTML = '<svg class="w-6 h-6"><use href="#icon-menu"></use></svg>';
+                    }
+                    return; // Exit the function
+                }
+
+                // If we are here, it's a valid anchor like #home
+                e.preventDefault();
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+
+                if (!mobileMenu.classList.contains('hidden')) {
+                     mobileMenu.classList.add('hidden');
+                     mobileMenuBtn.innerHTML = '<svg class="w-6 h-6"><use href="#icon-menu"></use></svg>';
+                }
+            };
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', scrollToSection);
+            });
+
+
+            // Parallax effect for hero background
+            const parallaxBg = document.getElementById('parallax-bg');
+            window.addEventListener('scroll', () => {
+                const offset = window.pageYOffset;
+                if (parallaxBg) {
+                    // Update transform property to correctly apply parallax effect while retaining other filters
+                    const currentFilter = parallaxBg.style.filter.replace(/blur\(\d+px\)/, '').trim(); // Remove blur
+                    parallaxBg.style.transform = `scale(1.1) translateY(${offset * 0.3}px)`;
+                    parallaxBg.style.filter = currentFilter;
+                }
+            });
+
+            // Contact form submission
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData.entries());
+                
+                console.log('Form Submitted:', data);
+
+                formFeedback.textContent = 'Thank you! Your message has been sent.';
+                formFeedback.style.color = 'var(--accent)';
+                contactForm.reset();
+
+                setTimeout(() => {
+                    formFeedback.textContent = '';
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>
+
