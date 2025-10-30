@@ -1,0 +1,17 @@
+{
+  "name": "personalportfolio-sagar",
+  "version": "1.0.0",
+  "description": "Personal portfolio website for Suddarsi Sangeeth Sagar, AI Operations Expert. Built as a single-page application with HTML, Tailwind CSS, and vanilla JavaScript.",
+  "author": "Suddarsi Sangeeth Sagar",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sangeethsagar/personalportfolio_sagar.git"
+  },
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "start": "echo 'No server script needed, just open index.html in your browser.'"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
