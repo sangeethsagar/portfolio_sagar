@@ -30,7 +30,7 @@ No complex setup is required.
 
 Clone this repository:
 
-git clone [https://github.com/sangeethsagar/personalportfolio_sagar.git](https://github.com/sangeethsagar/personalportfolio_sagar.git)
+git clone [https://github.com/sangeethsagar/portfolio_sagar.git](https://github.com/sangeethsagar/portfolio_sagar.git)
 
 
 Navigate to the directory:
@@ -54,7 +54,7 @@ Choose the main branch and the / (root) folder.
 
 Click "Save".
 
-Your website will be live in a few minutes at https://sangeethsagar.github.io/personalportfolio_sagar/.
+Your website will be live in a few minutes at https://sangeethsagar.github.io/portfolio_sagar/.
 
 🖼️ Asset Credits
 
