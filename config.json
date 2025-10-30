@@ -1,0 +1,98 @@
+{
+  "personalInfo": {
+    "name": "Suddarsi Sangeeth Sagar",
+    "title": "AI OPERATIONS EXPERT",
+    "email": "s.sagar140102@gmail.com",
+    "phone": "+91 7981716622",
+    "logoUrl": "https://i.postimg.cc/htxbsfcx/pArts.jpg",
+    "heroImage": "https://i.postimg.cc/x10wD18Y/20-AG1-A6656-3.jpg",
+    "heroBackground": "https://i.postimg.cc/PxSXYwFn/Screenshot-2025-10-23-122025.png"
+  },
+  "socials": {
+    "linkedin": "https://www.linkedin.com/in/sangeeth-sagar-suddarsi-abb773226",
+    "instagram": "https://www.instagram.com/suddarsi_sagar_14/"
+  },
+  "about": {
+    "imageUrl": "https://i.postimg.cc/wB5ZtLH6/Whats-App-Image-2025-07-12-at-18-50-09-ade36261.jpg",
+    "currentRole": "Operations Manager at Agmay Technologies Pvt. Ltd., specializing in AI-driven operations consulting and intelligent data solutions that transform business processes.",
+    "education": "B.Tech in AI & ML from ACE Engineering College (2020–2024), with specialized expertise in neural networks, deep learning, and advanced machine learning algorithms.",
+    "specializations": [
+      "AI Leadership",
+      "Neural Networks",
+      "ML Engineering",
+      "AI Strategy",
+      "Data Science"
+    ]
+  },
+  "skills": [
+    {
+      "category": "Data & Analytics",
+      "icon": "database",
+      "items": [
+        { "name": "SQL", "percentage": 90 },
+        { "name": "Data Warehousing", "percentage": 85 },
+        { "name": "MySQL", "percentage": 88 }
+      ]
+    },
+    {
+      "category": "Programming",
+      "icon": "code",
+      "items": [
+        { "name": "Python", "percentage": 92 },
+        { "name": "Machine Learning", "percentage": 87 },
+        { "name": "C Programming", "percentage": 80 }
+      ]
+    },
+    {
+      "category": "Operations",
+      "icon": "settings",
+      "items": [
+        { "name": "AWS", "percentage": 85 },
+        { "name": "Microsoft Excel", "percentage": 90 },
+        { "name": "Statistical Analysis", "percentage": 82 }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "AI Strategy Consulting",
+      "description": "Developing roadmaps for AI integration to achieve business goals.",
+      "icon": "brain"
+    },
+    {
+      "name": "Intelligent Data Solutions",
+      "description": "Architecting data warehouses and pipelines for ML applications.",
+      "icon": "database"
+    },
+    {
+      "name": "Operations Automation",
+      "description": "Implementing AI models to automate and optimize operational workflows.",
+      "icon": "settings"
+    },
+    {
+      "name": "ML Model Development",
+      "description": "Custom machine learning model creation, training, and deployment.",
+      "icon": "code"
+    }
+  ],
+  "projects": [
+    {
+      "title": "AI-Powered Call Center Analytics",
+      "description": "Analyzed call transcripts to identify customer sentiment and key issues, improving agent training and response times.",
+      "imageUrl": "https://placehold.co/600x400/3b82f6/FFFFFF?text=Project+1",
+      "tags": ["Python", "NLP", "AWS"]
+    },
+    {
+      "title": "Intelligent Document Processing",
+      "description": "Developed a system to automatically extract and categorize data from unstructured PDF documents with 95% accuracy.",
+      "imageUrl": "https://placehold.co/600x400/8b5cf6/FFFFFF?text=Project+2",
+      "tags": ["OCR", "Deep Learning", "SQL"]
+    },
+    {
+      "title": "Predictive Maintenance Model",
+      "description": "Built a machine learning model to predict equipment failures, reducing downtime and maintenance costs for a client.",
+      "imageUrl": "https://placehold.co/600x400/14b8a6/FFFFFF?text=Project+3",
+      "tags": ["ML", "Data Analysis", "Python"]
+    }
+  ]
+}
