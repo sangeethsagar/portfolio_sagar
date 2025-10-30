@@ -5,7 +5,7 @@
   "author": "Suddarsi Sangeeth Sagar",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sangeethsagar/personalportfolio_sagar.git"
+    "url": "https://github.com/sangeethsagar/portfolio_sagar.git"
   },
   "scripts": {
     "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
